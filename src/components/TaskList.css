@@ -1,0 +1,11 @@
+.completed .task-text {
+  text-decoration: line-through;
+}
+.task-text {
+}
+.timestamp {
+  font-size: 1rem;
+  font-size: 0.8em;
+  color: #888;
+  margin-left: 10px;
+}

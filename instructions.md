@@ -1,6 +1,6 @@
 # Instructions
 
-#  Todos App - Redux
+# Todos App - Redux
 
 In this week's project, it's time to flex your redux muscles and build an application that pulls together all the parts of redux by building a to do app.
 
@@ -17,6 +17,7 @@ In this week's project, it's time to flex your redux muscles and build an applic
 ## Stretch goals
 
 ### Intermediate
+
 - Add a timestamp for each task indicating when it was created. The timestamp should be displayed as a formatted date but stored as a raw date. You can either use built-in JS functionalities or a library like [date-fns](https://www.npmjs.com/package/date-fns).
 
 - Add a **complete all** button to set all tasks as completed. You could also use this opportunity to make your app look nice when there's no data. See [empty states UX design](https://www.toptal.com/designers/ux/empty-state-ux-design) for some ideas.
@@ -29,10 +30,9 @@ In this week's project, it's time to flex your redux muscles and build an applic
 
 - Add filters to display completed/uncompleted tasks, tasks created after a given date or anything else you consider important.
 
-
   #### Hint
+
   Often, when approaching things like this in redux, it's common to use the redux store to save the current filter and dispatch actions to change it. You can then use that state in your selector to decide what todos to return from the selector.
-    
 
 - Create categories/tags for tasks so they can be grouped - for example, 'Housework', 'Shopping', etc.
 
@@ -57,7 +57,6 @@ Then you're ready to start working on the project. None of the Redux packages yo
 When starting to write your code, try to work on the project in small chunks rather than taking on too much at once. For example, you could start by making a new slice to store your tasks and use a hardcoded list of tasks to get up and running with.
 
 Here is an example slice you could create to store your tasks:
-
 
       // src/reducers/tasks.js
       import { createSlice } from '@reduxjs/toolkit'
@@ -94,7 +93,6 @@ Here is how you can set up your store to be passed to the provider:
             </Provider>
           )
         }
-
 
 With all that set up, you can now start creating components. For example, you could make a `TaskList` component that uses `useSelector` from the 'react-redux' package to fetch the list of todos and map over them.
 
