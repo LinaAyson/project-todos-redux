@@ -17,7 +17,7 @@ const TaskList = ({ showCompleted }) => {
   };
 
   const handleRemoveTask = (id) => {
-    dispatch(removeTask(id));
+    dispatch(removeTask({ id }));
   };
 
   return (
