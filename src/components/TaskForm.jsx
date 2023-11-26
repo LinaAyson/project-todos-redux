@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTask } from "../reducers/tasks";
+import "./TaskForm.css";
 
 const TaskForm = () => {
   const [taskText, setTaskText] = useState("");
@@ -15,7 +16,14 @@ const TaskForm = () => {
         id: new Date().getTime(),
         text: taskText,
         complete: false,
-        timestamp: new Date().toLocaleString(),
+        timestamp: new Date().toLocaleString("en-US", {
+          year: "numeric",
+          month: "numeric",
+          day: "numeric",
+          hour: "numeric",
+          minute: "numeric",
+          hour12: true,
+        }),
       };
 
       console.log(newTask); // Add this line for debugging
@@ -24,16 +32,24 @@ const TaskForm = () => {
       setTaskText("");
     }
   };
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleAddTask();
+    }
+  };
 
   return (
-    <div>
+    <div className="taskForm">
       <input
         type="text"
         placeholder="Add a new task"
         value={taskText}
         onChange={handleInputChange}
+        onKeyPress={handleKeyPress}
       />
-      <button onClick={handleAddTask}>Add Task</button>
+      <button className="btnAddTask" onClick={handleAddTask}>
+        Add Task
+      </button>
     </div>
   );
 };

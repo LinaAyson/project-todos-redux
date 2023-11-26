@@ -6,6 +6,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import tasksReducer from "./reducers/tasks";
 import TaskList from "./components/TaskList";
 import TaskForm from "./components/TaskForm";
+import "./index.css";
 
 const reducer = combineReducers({
   tasks: tasksReducer,

@@ -1,0 +1,95 @@
+.taskForm {
+  display: flex;
+  justify-content: center;
+}
+
+.taskForm,
+.taskList {
+  background-color: #2f2c47;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.btnAddTask {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  background-color: #7e64ff;
+  width: 90px;
+  margin-left: 6px;
+}
+
+.btnAddTask:hover {
+  background-color: #ccc2fe;
+}
+
+input {
+  background-color: #ccc2fe;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.taskCount {
+  max-width: 600px;
+  margin: auto;
+  padding: 0 10px; /* Add padding to the sides */
+  text-align: right;
+}
+
+@media only screen and (min-width: 900px) {
+  .taskCount {
+    max-width: 900px;
+    margin: auto;
+  }
+}
+
+@media only screen and (min-width: 400px) {
+  .taskForm,
+  .taskList {
+    max-width: 600px;
+    margin: auto;
+    margin-top: 2rem;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .taskForm,
+  .taskList {
+    max-width: 900px;
+    margin: auto;
+    margin-top: 2rem;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+.timestamp {
+  font-size: 12px;
+  color: #888;
+  margin-left: 10px;
+}
+
+.completed .task-text {
+  text-decoration: line-through;
+}
+
+.task-text {
+  word-break: break-word;
+}
+
+.btnRmvTask {
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  background-color: #fe636c;
+  margin-left: 1rem;
+  color: white;
+  font-size: 12px;
+}
+.btnRmvTask:hover {
+  background-color: #c2474e;
+}

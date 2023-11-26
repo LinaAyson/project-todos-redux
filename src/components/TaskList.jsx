@@ -1,11 +1,11 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleComplete, removeTask } from "../reducers/tasks";
+import TaskCount from "./TaskCount";
 import "./TaskList.css";
 
 const TaskList = ({ showCompleted }) => {
   const tasks = useSelector((state) => state.tasks);
-
   const dispatch = useDispatch();
 
   const filteredTasks = showCompleted
@@ -21,23 +21,33 @@ const TaskList = ({ showCompleted }) => {
   };
 
   return (
-    <div>
-      <h2>{showCompleted ? "Completed Tasks" : "Task List"}</h2>
-      <ul>
-        {filteredTasks.map((task) => (
-          <li key={task.id} className={task.complete ? "completed" : ""}>
-            <input
-              type="checkbox"
-              checked={task.complete}
-              onChange={() => handleToggleComplete(task.id)}
-            />
-            <span className="task-text">{task.text}</span>
-            <span className="timestamp">Created at: {task.timestamp}</span>
-            <button onClick={() => handleRemoveTask(task.id)}>Remove</button>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <div className="taskList">
+        <h2>TaskList</h2>
+        <ul>
+          {filteredTasks.map((task) => (
+            <li key={task.id} className={task.complete ? "completed" : ""}>
+              <input
+                type="checkbox"
+                checked={task.complete}
+                onChange={() => handleToggleComplete(task.id)}
+              />
+              <span className="task-text">{task.text}</span>
+              <span className="timestamp">Created at: {task.timestamp}</span>
+              <button
+                className="btnRmvTask"
+                onClick={() => handleRemoveTask(task.id)}
+              >
+                Delete
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="taskCount">
+        <TaskCount />
+      </div>
+    </>
   );
 };
 
