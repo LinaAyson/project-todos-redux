@@ -1,11 +1,4 @@
-/* *,
-*::before,
-*::after {
-  box-sizing: border-box;
-} */
-
 body {
-  /* margin: 0; */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -28,7 +21,6 @@ a {
   padding: 20px;
 }
 
-/* Center-align specific text elements */
 h1 {
   text-align: center;
 }
