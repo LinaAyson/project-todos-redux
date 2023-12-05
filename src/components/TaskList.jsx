@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleComplete, removeTask } from "../reducers/tasks";
 import TaskCount from "./TaskCount";
-import "./TaskList.css";
 
 const TaskList = ({ showCompleted }) => {
   const tasks = useSelector((state) => state.tasks);
